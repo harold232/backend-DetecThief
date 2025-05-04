@@ -1,8 +1,10 @@
 package com.group2.detecthief.domain.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
-
 
 public class User {
     private UUID id;
@@ -13,6 +15,7 @@ public class User {
     private boolean active;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private UserProfile profile;
 
     // Constructor
     public User(UUID id, String username, String email, String firstName, String lastName,
@@ -27,6 +30,20 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
+    // Constructor con perfil
+    public User(UUID id, String username, String email, String firstName, String lastName,
+                boolean active, LocalDateTime createdAt, LocalDateTime updatedAt, UserProfile profile) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.active = active;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.profile = profile;
+    }
+
     // Constructor sin ID para creaciones nuevas
     public User(String username, String email, String firstName, String lastName) {
         this.id = null;
@@ -39,7 +56,19 @@ public class User {
         this.updatedAt = LocalDateTime.now();
     }
 
-    // Getters y Setters
+    // Constructor sin ID para creaciones nuevas con rol
+    public User(String username, String email, String firstName, String lastName, String role) {
+        this.id = null;
+        this.username = username;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.active = true;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+        this.profile = new UserProfile(null, role, true);
+    }
+
     public UUID getId() {
         return id;
     }
@@ -104,15 +133,31 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
+    public UserProfile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(UserProfile profile) {
+        this.profile = profile;
+    }
+
     // Métodos de dominio
     public void activate() {
         this.active = true;
         this.updatedAt = LocalDateTime.now();
+        if (this.profile != null) {
+            this.profile.setStateSystem("activo");
+            this.profile.setUpdatedAt(LocalDateTime.now());
+        }
     }
 
     public void deactivate() {
         this.active = false;
         this.updatedAt = LocalDateTime.now();
+        if (this.profile != null) {
+            this.profile.setStateSystem("inactivo");
+            this.profile.setUpdatedAt(LocalDateTime.now());
+        }
     }
 
     public void update(String username, String email, String firstName, String lastName) {
@@ -121,5 +166,14 @@ public class User {
         if (firstName != null) this.firstName = firstName;
         if (lastName != null) this.lastName = lastName;
         this.updatedAt = LocalDateTime.now();
+    }
+
+    public void updateRole(String role) {
+        if (this.profile != null) {
+            this.profile.setRole(role);
+            this.profile.setUpdatedAt(LocalDateTime.now());
+        } else {
+            this.profile = new UserProfile(null, role, true);
+        }
     }
 }

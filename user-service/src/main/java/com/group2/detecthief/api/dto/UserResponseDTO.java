@@ -12,11 +12,12 @@ public class UserResponseDTO {
     private boolean active;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private UserProfileDTO profile;
 
     // Constructor
     public UserResponseDTO(UUID id, String username, String email, String firstName,
                            String lastName, boolean active, LocalDateTime createdAt,
-                           LocalDateTime updatedAt) {
+                           LocalDateTime updatedAt, UserProfileDTO profile) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -25,6 +26,7 @@ public class UserResponseDTO {
         this.active = active;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.profile = profile;
     }
 
     // Getters
@@ -58,5 +60,9 @@ public class UserResponseDTO {
 
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
+    }
+
+    public UserProfileDTO getProfile() {
+        return profile;
     }
 }

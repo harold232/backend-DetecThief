@@ -20,16 +20,18 @@ public class UserRequestDTO {
     @NotBlank(message = "El apellido es obligatorio")
     private String lastName;
 
-    // Constructor vacío necesario para deserialización
+    private String role;
+
     public UserRequestDTO() {
     }
 
     // Constructor con todos los campos
-    public UserRequestDTO(String username, String email, String firstName, String lastName) {
+    public UserRequestDTO(String username, String email, String firstName, String lastName, String role) {
         this.username = username;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.role = role;
     }
 
     // Getters y Setters
@@ -63,5 +65,13 @@ public class UserRequestDTO {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

@@ -34,6 +34,9 @@ public class UserEntity {
     @Column(name = "actualizado_en", nullable = false)
     private LocalDateTime updatedAt;
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    private UserProfileEntity profile;
+
     // Constructor vacío necesario para JPA
     public UserEntity() {
     }
@@ -115,6 +118,17 @@ public class UserEntity {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public UserProfileEntity getProfile() {
+        return profile;
+    }
+
+    public void setProfile(UserProfileEntity profile) {
+        this.profile = profile;
+        if (profile != null) {
+            profile.setUser(this);
+        }
     }
 
     // Métodos útiles para trabajar con JPA

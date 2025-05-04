@@ -1,8 +1,10 @@
 package com.group2.detecthief.infrastructure.persistence.adapter;
 
 import com.group2.detecthief.domain.model.User;
+import com.group2.detecthief.domain.model.UserProfile;
 import com.group2.detecthief.domain.repository.UserRepository;
 import com.group2.detecthief.infrastructure.persistence.entity.UserEntity;
+import com.group2.detecthief.infrastructure.persistence.entity.UserProfileEntity;
 import com.group2.detecthief.infrastructure.persistence.repository.JpaUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -56,9 +58,9 @@ public class UserRepositoryAdapter implements UserRepository {
         return jpaUserRepository.existsByUsername(username);
     }
 
-    // Conversión de Entity a Model
+    // Update toModel method to include profile conversion
     private User toModel(UserEntity entity) {
-        return new User(
+        User user = new User(
                 entity.getId(),
                 entity.getUsername(),
                 entity.getEmail(),
@@ -68,11 +70,26 @@ public class UserRepositoryAdapter implements UserRepository {
                 entity.getCreatedAt(),
                 entity.getUpdatedAt()
         );
+
+        // Convert profile if it exists
+        if (entity.getProfile() != null) {
+            UserProfileEntity profileEntity = entity.getProfile();
+            UserProfile profile = new UserProfile(
+                    profileEntity.getId(),
+                    profileEntity.getRole(),
+                    profileEntity.getCreatedAt(),
+                    profileEntity.getUpdatedAt(),
+                    profileEntity.getStateSystem()
+            );
+            user.setProfile(profile);
+        }
+
+        return user;
     }
 
-    // Conversión de Model a Entity
+    // Update toEntity method to include profile conversion
     private UserEntity toEntity(User model) {
-        return new UserEntity(
+        UserEntity entity = new UserEntity(
                 model.getId(),
                 model.getUsername(),
                 model.getEmail(),
@@ -82,5 +99,21 @@ public class UserRepositoryAdapter implements UserRepository {
                 model.getCreatedAt(),
                 model.getUpdatedAt()
         );
+
+        // Convert profile if it exists
+        if (model.getProfile() != null) {
+            UserProfile profile = model.getProfile();
+            UserProfileEntity profileEntity = new UserProfileEntity(
+                    profile.getId(),
+                    entity,
+                    profile.getRole(),
+                    profile.getCreatedAt(),
+                    profile.getUpdatedAt(),
+                    profile.getStateSystem()
+            );
+            entity.setProfile(profileEntity);
+        }
+
+        return entity;
     }
 }
