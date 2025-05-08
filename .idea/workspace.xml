@@ -5,21 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc2f9da9-b451-48ca-a2ad-000d9c803143" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/repository/JpaUserProfileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/dto/UserRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/dto/UserRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/dto/UserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/dto/UserResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/application/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/application/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/application/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/application/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/DetecthiefApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/DetecthiefApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/model/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/model/UserProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/config/BeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/config/BeanConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/adapter/UserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/adapter/UserRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/entity/UserDetailEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/entity/UserProfileEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/entity/UserProfileEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/repository/JpaUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/repository/JpaUserDetailRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/DetecthiefApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/DetecthiefApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserResponseDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserResponseDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/model/UserProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/model/UserProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/config/BeanConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/config/BeanConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/persistence/adapter/UserRepositoryAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/persistence/adapter/UserRepositoryAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/persistence/entity/UserDetailEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/persistence/entity/UserProfileEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/persistence/entity/UserProfileEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/persistence/repository/JpaUserDetailRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/persistence/repository/JpaUserProfileRepository.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +41,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;harold232&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Milko0/backend-DetecThief.git&quot;,
+    &quot;accountId&quot;: &quot;584c9abd-38a6-4d22-b6ff-4f117699faed&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
@@ -45,16 +62,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.DetecthiefApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "harold",
-    "last_opened_file_path": "C:/Users/marli/Downloads/Proyecto/backend-DetecThief"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DetecthiefApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.detecthief [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.detecthief [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.detecthief [validate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DetecthiefApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;harold&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marli/Downloads/Proyecto/backend-DetecThief&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="DetecthiefApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/detecthief" />
+        <env name="DB_USERNAME" value="postgres" />
+        <env name="DB_PASSWORD" value="12345678" />
+      </envs>
+      <module name="detecthief" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.group2.detecthief.DetecthiefApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.group2.detecthief.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.DetecthiefApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="dc2f9da9-b451-48ca-a2ad-000d9c803143" name="Changes" comment="" />
@@ -62,7 +130,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1746419555804</updated>
+      <workItem from="1746740759851" duration="2652000" />
+      <workItem from="1746744541887" duration="989000" />
+      <workItem from="1746746210136" duration="784000" />
+      <workItem from="1746747036898" duration="158000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

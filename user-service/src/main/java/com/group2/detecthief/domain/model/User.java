@@ -1,8 +1,5 @@
 package com.group2.detecthief.domain.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
 

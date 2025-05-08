@@ -1,11 +1,13 @@
 package com.group2.detecthief.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
+@Data
 @Table(name = "usuarios")
 public class UserEntity {
 
@@ -56,7 +58,7 @@ public class UserEntity {
     }
 
     // Getters y Setters
-    public UUID getId() {
+    /*public UUID getId() {
         return id;
     }
 
@@ -129,7 +131,7 @@ public class UserEntity {
         if (profile != null) {
             profile.setUser(this);
         }
-    }
+    }*/
 
     // Métodos útiles para trabajar con JPA
     @PrePersist
