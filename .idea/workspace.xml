@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc2f9da9-b451-48ca-a2ad-000d9c803143" name="Changes" comment="" />
+    <list default="true" id="dc2f9da9-b451-48ca-a2ad-000d9c803143" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/DetecthiefApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/DetecthiefApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/model/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/model/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/DetecthiefApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/DetecthiefApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserProfileDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserProfileDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserResponseDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserResponseDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/exception/UserNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/exception/UserNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/model/UserProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/model/UserProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/config/BeanConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/config/BeanConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/persistence/entity/UserProfileEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/persistence/entity/UserProfileEntity.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +38,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="GianAlejandro" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -55,7 +80,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.DetecthiefApplication.executor": "Run",
-    "git-widget-placeholder": "harold",
+    "git-widget-placeholder": "GianAlejandro",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/harold/backend-DetecThief/user-service",
@@ -87,11 +112,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.DetecthiefApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

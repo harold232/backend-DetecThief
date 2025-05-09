@@ -22,7 +22,7 @@ public class UserProfile {
     public UserProfile(UUID id, String role, boolean active) {
         this.id = id;
         this.role = role != null ? role : "USER";
-        this.stateSystem = active ? "ACTIVE" : "INACTIVE";
+        this.stateSystem = active ? "activo" : "inactivo";
         this.active = active;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
