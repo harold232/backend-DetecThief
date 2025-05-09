@@ -11,20 +11,20 @@ import org.springframework.stereotype.Component;
 public class UserMapper {
 
     public User toModel(UserRequestDTO dto) {
-        if (dto.getRole() != null && !dto.getRole().isEmpty()) {
+        if (dto.role() != null && !dto.role().isEmpty()) {
             return new User(
-                    dto.getUsername(),
-                    dto.getEmail(),
-                    dto.getFirstName(),
-                    dto.getLastName(),
-                    dto.getRole()
+                    dto.username(),
+                    dto.email(),
+                    dto.firstName(),
+                    dto.lastName(),
+                    dto.role()
             );
         } else {
             User user = new User(
-                    dto.getUsername(),
-                    dto.getEmail(),
-                    dto.getFirstName(),
-                    dto.getLastName()
+                    dto.username(),
+                    dto.email(),
+                    dto.firstName(),
+                    dto.lastName()
             );
             user.setProfile(new UserProfile(null, "USER", true));
             return user;
@@ -37,19 +37,19 @@ public class UserMapper {
             profileDTO = new UserProfileDTO(
                     user.getProfile().getId(),
                     user.getProfile().getRole(),
+                    user.getProfile().getStateSystem(),
+                    user.getProfile().isActive(),
                     user.getProfile().getCreatedAt(),
-                    user.getProfile().getUpdatedAt(),
-                    user.getProfile().getStateSystem()
+                    user.getProfile().getUpdatedAt()
             );
         }
-
+        
         return new UserResponseDTO(
                 user.getId(),
                 user.getUsername(),
                 user.getEmail(),
                 user.getFirstName(),
                 user.getLastName(),
-                user.isActive(),
                 user.getCreatedAt(),
                 user.getUpdatedAt(),
                 profileDTO

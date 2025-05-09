@@ -6,7 +6,6 @@ import com.group2.detecthief.application.mapper.UserMapper;
 import com.group2.detecthief.domain.exception.UserNotFoundException;
 import com.group2.detecthief.domain.model.User;
 import com.group2.detecthief.domain.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,7 +18,6 @@ public class UserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
-    @Autowired
     public UserService(UserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
         this.userMapper = userMapper;
@@ -27,11 +25,11 @@ public class UserService {
 
     public UserResponseDTO createUser(UserRequestDTO userRequestDTO) {
         // Validaciones de negocio
-        if (userRepository.existsByEmail(userRequestDTO.getEmail())) {
+        if (userRepository.existsByEmail(userRequestDTO.email())) {
             throw new IllegalArgumentException("Email ya registrado");
         }
 
-        if (userRepository.existsByUsername(userRequestDTO.getUsername())) {
+        if (userRepository.existsByUsername(userRequestDTO.username())) {
             throw new IllegalArgumentException("Nombre de usuario ya registrado");
         }
 
@@ -63,10 +61,10 @@ public class UserService {
 
         // Actualizamos el usuario con los nuevos datos
         existingUser.update(
-                userRequestDTO.getUsername(),
-                userRequestDTO.getEmail(),
-                userRequestDTO.getFirstName(),
-                userRequestDTO.getLastName()
+                userRequestDTO.username(),
+                userRequestDTO.email(),
+                userRequestDTO.firstName(),
+                userRequestDTO.lastName()
         );
 
         User updatedUser = userRepository.save(existingUser);
@@ -80,7 +78,7 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public UserResponseDTO activateUser(UUID id) {
+    /*public UserResponseDTO activateUser(UUID id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id.toString()));
         user.activate();
@@ -94,5 +92,5 @@ public class UserService {
         user.deactivate();
         User updatedUser = userRepository.save(user);
         return userMapper.toResponseDTO(updatedUser);
-    }
+    }*/
 }

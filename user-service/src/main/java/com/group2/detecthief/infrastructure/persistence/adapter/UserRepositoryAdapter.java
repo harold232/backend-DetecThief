@@ -6,7 +6,6 @@ import com.group2.detecthief.domain.repository.UserRepository;
 import com.group2.detecthief.infrastructure.persistence.entity.UserEntity;
 import com.group2.detecthief.infrastructure.persistence.entity.UserProfileEntity;
 import com.group2.detecthief.infrastructure.persistence.repository.JpaUserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -19,7 +18,6 @@ public class UserRepositoryAdapter implements UserRepository {
 
     private final JpaUserRepository jpaUserRepository;
 
-    @Autowired
     public UserRepositoryAdapter(JpaUserRepository jpaUserRepository) {
         this.jpaUserRepository = jpaUserRepository;
     }
@@ -66,20 +64,19 @@ public class UserRepositoryAdapter implements UserRepository {
                 entity.getEmail(),
                 entity.getFirstName(),
                 entity.getLastName(),
-                entity.isActive(),
                 entity.getCreatedAt(),
                 entity.getUpdatedAt()
         );
-
-        // Convert profile if it exists
         if (entity.getProfile() != null) {
             UserProfileEntity profileEntity = entity.getProfile();
             UserProfile profile = new UserProfile(
-                    profileEntity.getId(),
-                    profileEntity.getRole(),
-                    profileEntity.getCreatedAt(),
-                    profileEntity.getUpdatedAt(),
-                    profileEntity.getStateSystem()
+                profileEntity.getId(),
+                profileEntity.getRole(),
+                profileEntity.getStateSystem(),
+                profileEntity.isActive(),
+                profileEntity.getCreatedAt(),
+                profileEntity.getUpdatedAt(),
+                user
             );
             user.setProfile(profile);
         }
@@ -95,7 +92,6 @@ public class UserRepositoryAdapter implements UserRepository {
                 model.getEmail(),
                 model.getFirstName(),
                 model.getLastName(),
-                model.isActive(),
                 model.getCreatedAt(),
                 model.getUpdatedAt()
         );
