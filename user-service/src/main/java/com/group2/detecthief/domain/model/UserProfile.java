@@ -28,4 +28,21 @@ public class UserProfile {
         this.updatedAt = LocalDateTime.now();
     }
 
+    // Métodos de dominio
+    public void activate() {
+        this.active = true;
+        this.updatedAt = LocalDateTime.now();
+        if (this.user != null) {
+            this.user.setUpdatedAt(LocalDateTime.now());
+        }
+    }
+
+    public void deactivate() {
+        this.active = false;
+        this.updatedAt = LocalDateTime.now();
+        if (this.user != null) {
+            this.user.setUpdatedAt(LocalDateTime.now());
+        }
+    }
+
 }

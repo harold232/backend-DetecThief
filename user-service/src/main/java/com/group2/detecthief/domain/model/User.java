@@ -55,25 +55,6 @@ public class User {
         
     }
 
-    // Métodos de dominio
-    /*public void activate() {
-        this.active = true;
-        this.updatedAt = LocalDateTime.now();
-        if (this.profile != null) {
-            this.profile.setStateSystem("activo");
-            this.profile.setUpdatedAt(LocalDateTime.now());
-        }
-    }
-
-    public void deactivate() {
-        this.active = false;
-        this.updatedAt = LocalDateTime.now();
-        if (this.profile != null) {
-            this.profile.setStateSystem("inactivo");
-            this.profile.setUpdatedAt(LocalDateTime.now());
-        }
-    }*/
-
     public void update(String username, String email, String firstName, String lastName) {
         if (username != null) this.username = username;
         if (email != null) this.email = email;

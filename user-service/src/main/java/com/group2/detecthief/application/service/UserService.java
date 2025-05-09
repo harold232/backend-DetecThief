@@ -5,6 +5,8 @@ import com.group2.detecthief.api.dto.UserResponseDTO;
 import com.group2.detecthief.application.mapper.UserMapper;
 import com.group2.detecthief.domain.exception.UserNotFoundException;
 import com.group2.detecthief.domain.model.User;
+import com.group2.detecthief.domain.model.UserProfile;
+import com.group2.detecthief.domain.repository.UserProfileRepository;
 import com.group2.detecthief.domain.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,15 +18,16 @@ import java.util.stream.Collectors;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final UserProfileRepository userProfileRepository;
     private final UserMapper userMapper;
 
-    public UserService(UserRepository userRepository, UserMapper userMapper) {
+    public UserService(UserRepository userRepository, UserProfileRepository userProfileRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
+        this.userProfileRepository = userProfileRepository;
         this.userMapper = userMapper;
     }
 
     public UserResponseDTO createUser(UserRequestDTO userRequestDTO) {
-        // Validaciones de negocio
         if (userRepository.existsByEmail(userRequestDTO.email())) {
             throw new IllegalArgumentException("Email ya registrado");
         }
@@ -78,19 +81,31 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    /*public UserResponseDTO activateUser(UUID id) {
+    public UserResponseDTO activateUser(UUID id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id.toString()));
-        user.activate();
-        User updatedUser = userRepository.save(user);
-        return userMapper.toResponseDTO(updatedUser);
+
+        UserProfile userProfile = userProfileRepository.findByUserId(user.getId())
+                .orElseThrow(() -> new IllegalArgumentException("Perfil de usuario no encontrado para el ID proporcionado"));
+
+        userProfile.activate();
+        //UserProfile updateUserProfile = userProfileRepository.save(userProfile);
+        userProfileRepository.save(userProfile);
+
+        return userMapper.toResponseDTO(user);
     }
 
     public UserResponseDTO deactivateUser(UUID id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id.toString()));
-        user.deactivate();
-        User updatedUser = userRepository.save(user);
-        return userMapper.toResponseDTO(updatedUser);
-    }*/
+
+        UserProfile userProfile = userProfileRepository.findByUserId(user.getId())
+                .orElseThrow(() -> new IllegalArgumentException("Perfil de usuario no encontrado para el ID proporcionado"));
+
+        userProfile.deactivate();
+        //UserProfile updateUserProfile = userProfileRepository.save(userProfile);
+        userProfileRepository.save(userProfile);
+
+        return userMapper.toResponseDTO(user);
+    }
 }

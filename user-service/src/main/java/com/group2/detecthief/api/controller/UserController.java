@@ -4,6 +4,8 @@ import com.group2.detecthief.api.dto.UserRequestDTO;
 import com.group2.detecthief.api.dto.UserResponseDTO;
 import com.group2.detecthief.application.service.UserService;
 import com.group2.detecthief.domain.exception.UserNotFoundException;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,11 +19,8 @@ import java.util.UUID;
 @RequestMapping("/api/users")
 public class UserController {
 
-    private final UserService userService;
-
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    @Autowired
+    private UserService userService;
 
     @PostMapping
     public ResponseEntity<UserResponseDTO> createUser(@Valid @RequestBody UserRequestDTO userRequestDTO) {
@@ -73,7 +72,7 @@ public class UserController {
         }
     }
 
-    /*@PatchMapping("/{id}/activate")
+    @PatchMapping("/{id}/activate")
     public ResponseEntity<UserResponseDTO> activateUser(@PathVariable UUID id) {
         try {
             UserResponseDTO response = userService.activateUser(id);
@@ -91,5 +90,5 @@ public class UserController {
         } catch (UserNotFoundException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
-    }*/
+    }
 }
