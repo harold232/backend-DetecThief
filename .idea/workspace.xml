@@ -5,27 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc2f9da9-b451-48ca-a2ad-000d9c803143" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/dto/LoginRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/application/seguridad/PasswordEncoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/controller/AuthController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/dto/LoginRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/dto/UserProfileDTO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/dto/UserRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/dto/UserRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/dto/UserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/api/dto/UserResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/application/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/application/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/application/seguridad/PasswordEncoder.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/application/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/application/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/model/UserProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/repository/UserProfileRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/domain/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/config/BeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/config/BeanConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/adapter/UserProfielRepositoryAdapter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/adapter/UserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/adapter/UserRepositoryAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/entity/UserProfileEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/repository/JpaUserProfileRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/repository/JpaUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/group2/detecthief/infrastructure/persistence/repository/JpaUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserProfileDTO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserResponseDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/api/dto/UserResponseDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/mapper/UserMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/application/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/model/UserProfile.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/domain/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/config/BeanConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/config/BeanConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/group2/detecthief/infrastructure/persistence/entity/UserProfileEntity.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +105,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }

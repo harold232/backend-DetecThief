@@ -5,24 +5,18 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 public record UserRequestDTO(
-        @NotBlank(message = "El nombre de usuario es obligatorio")
-        @Size(min = 3, max = 50, message = "El nombre de usuario debe tener entre 3 y 50 caracteres")
-        String username,
+        @NotBlank(message = "El nickname es obligatorio")
+        @Size(min = 3, max = 50, message = "El nickname debe tener entre 3 y 50 caracteres")
+        String nickname,
 
         @NotBlank(message = "El email es obligatorio")
         @Email(message = "Formato de email inválido")
         String email,
 
-        @NotBlank(message = "La contraseña es obligatoria")
-        @Size(min = 6, message = "La contraseña debe tener al menos 6 caracteres")
-        String password,
-
         @NotBlank(message = "El nombre es obligatorio")
-        String firstName,
+        String nombre,
 
         @NotBlank(message = "El apellido es obligatorio")
-        String lastName,
-
-        String role
+        String apellido
 ) {
 }

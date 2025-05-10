@@ -5,78 +5,44 @@ import java.util.UUID;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     private UUID id;
-    private String username;
+    private String nickname;
     private String email;
-    private String password;
-    private String firstName;
-    private String lastName;
-    private UserProfile profile;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private String nombre;
+    private String apellido;
+    private String rol;
+    private String estadoSistema;
+    private LocalDateTime creadoEn;
+    private LocalDateTime actualizadoEn;
 
-    // Constructor
-    public User(UUID id, String username, String email, String password, String firstName, LocalDateTime createdAt, LocalDateTime updatedAt) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
-
-    // Constructor sin ID para creaciones nuevas
-    public User(String username, String email, String password, String firstName, String lastName) {
-        this.id = null;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
-    }
-
-    // Constructor sin ID para creaciones nuevas con rol
-    public User(String username, String email, String password, String firstName, String lastName, String role) {
-        this.id = null;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.profile = new UserProfile(null, role, true);
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
-    }
-
-    public void update(String username, String email, String firstName, String lastName) {
-        if (username != null) this.username = username;
+    public void update(String nickname, String email, String nombre, String apellido) {
+        if (nickname != null) this.nickname = nickname;
         if (email != null) this.email = email;
-        if (firstName != null) this.firstName = firstName;
-        if (lastName != null) this.lastName = lastName;
-        this.updatedAt = LocalDateTime.now();
+        if (nombre != null) this.nombre = nombre;
+        if (apellido != null) this.apellido = apellido;
+        this.actualizadoEn = LocalDateTime.now();
     }
 
-    public void updatePassword(String password) {
-        if (password != null) this.password = password;
-        this.updatedAt = LocalDateTime.now();
+    public void activate() {
+        this.estadoSistema = "activo";
+        this.actualizadoEn = LocalDateTime.now();
     }
 
-    public void updateRole(String role) {
-        if (this.profile != null) {
-            this.profile.setRole(role);
-            this.profile.setUpdatedAt(LocalDateTime.now());
-        } else {
-            this.profile = new UserProfile(null, role, true);
-        }
+    public void deactivate() {
+        this.estadoSistema = "inactivo";
+        this.actualizadoEn = LocalDateTime.now();
+    }
+
+    public void updateRol(String rol) {
+        this.rol = rol;
+        this.actualizadoEn = LocalDateTime.now();
     }
 }

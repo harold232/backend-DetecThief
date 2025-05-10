@@ -1,6 +1,5 @@
 package com.group2.detecthief.api.controller;
 
-import com.group2.detecthief.api.dto.LoginRequestDTO;
 import com.group2.detecthief.api.dto.UserRequestDTO;
 import com.group2.detecthief.api.dto.UserResponseDTO;
 import com.group2.detecthief.application.service.UserService;

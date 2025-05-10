@@ -6,6 +6,7 @@ import com.group2.detecthief.infrastructure.persistence.repository.JpaUserReposi
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+// BeanConfiguration.java - Configuración de beans
 @Configuration
 public class BeanConfiguration {
 

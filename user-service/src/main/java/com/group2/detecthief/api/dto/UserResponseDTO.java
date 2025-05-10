@@ -4,12 +4,13 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 public record UserResponseDTO(
-    UUID id,
-    String username,
-    String email,
-    String firstName,
-    String lastName,
-    LocalDateTime createdAt,
-    LocalDateTime updatedAt,
-    UserProfileDTO profile
+        UUID id,
+        String nickname,
+        String email,
+        String nombre,
+        String apellido,
+        String rol,
+        String estadoSistema,
+        LocalDateTime creadoEn,
+        LocalDateTime actualizadoEn
 ) {}
