@@ -14,6 +14,7 @@ public class User {
     private UUID id;
     private String username;
     private String email;
+    private String password;
     private String firstName;
     private String lastName;
     private UserProfile profile;
@@ -21,10 +22,11 @@ public class User {
     private LocalDateTime updatedAt;
 
     // Constructor
-    public User(UUID id, String username, String email, String firstName, String lastName, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public User(UUID id, String username, String email, String password, String firstName, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.username = username;
         this.email = email;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.createdAt = createdAt;
@@ -32,10 +34,11 @@ public class User {
     }
 
     // Constructor sin ID para creaciones nuevas
-    public User(String username, String email, String firstName, String lastName) {
+    public User(String username, String email, String password, String firstName, String lastName) {
         this.id = null;
         this.username = username;
         this.email = email;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.createdAt = LocalDateTime.now();
@@ -43,16 +46,16 @@ public class User {
     }
 
     // Constructor sin ID para creaciones nuevas con rol
-    public User(String username, String email, String firstName, String lastName, String role) {
+    public User(String username, String email, String password, String firstName, String lastName, String role) {
         this.id = null;
         this.username = username;
         this.email = email;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.profile = new UserProfile(null, role, true);
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
-        
     }
 
     public void update(String username, String email, String firstName, String lastName) {
@@ -60,6 +63,11 @@ public class User {
         if (email != null) this.email = email;
         if (firstName != null) this.firstName = firstName;
         if (lastName != null) this.lastName = lastName;
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public void updatePassword(String password) {
+        if (password != null) this.password = password;
         this.updatedAt = LocalDateTime.now();
     }
 

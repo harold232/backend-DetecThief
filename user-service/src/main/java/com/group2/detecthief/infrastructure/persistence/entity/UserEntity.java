@@ -25,6 +25,10 @@ public class UserEntity {
     @Column(unique = true, nullable = false)
     private String email;
 
+    // Nuevo campo para la contraseña
+    @Column(name = "password", nullable = false)
+    private String password;
+
     @Column(name = "nombre", nullable = false)
     private String firstName;
 
@@ -42,12 +46,13 @@ public class UserEntity {
 
 
     // Constructor con todos los campos
-    public UserEntity(UUID id, String username, String email, String firstName,
+    public UserEntity(UUID id, String username, String email, String password, String firstName,
                       String lastName, LocalDateTime createdAt,
                       LocalDateTime updatedAt) {
         this.id = id;
         this.username = username;
         this.email = email;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.createdAt = createdAt;

@@ -40,7 +40,10 @@ public class UserRepositoryAdapter implements UserRepository {
                 .map(this::toModel)
                 .collect(Collectors.toList());
     }
-
+    @Override
+    public Optional<User> findByUsername(String username) {
+        return jpaUserRepository.findByUsername(username).map(this::toModel);
+    }
     @Override
     public void deleteById(UUID id) {
         jpaUserRepository.deleteById(id);
@@ -56,27 +59,27 @@ public class UserRepositoryAdapter implements UserRepository {
         return jpaUserRepository.existsByUsername(username);
     }
 
-    // Update toModel method to include profile conversion
+    // Actualizado para incluir password
     private User toModel(UserEntity entity) {
         User user = new User(
                 entity.getId(),
                 entity.getUsername(),
                 entity.getEmail(),
+                entity.getPassword(), // Incluir la contraseña encriptada
                 entity.getFirstName(),
-                entity.getLastName(),
                 entity.getCreatedAt(),
                 entity.getUpdatedAt()
         );
         if (entity.getProfile() != null) {
             UserProfileEntity profileEntity = entity.getProfile();
             UserProfile profile = new UserProfile(
-                profileEntity.getId(),
-                profileEntity.getRole(),
-                profileEntity.getStateSystem(),
-                profileEntity.isActive(),
-                profileEntity.getCreatedAt(),
-                profileEntity.getUpdatedAt(),
-                user
+                    profileEntity.getId(),
+                    profileEntity.getRole(),
+                    profileEntity.getStateSystem(),
+                    profileEntity.isActive(),
+                    profileEntity.getCreatedAt(),
+                    profileEntity.getUpdatedAt(),
+                    user
             );
             user.setProfile(profile);
         }
@@ -84,19 +87,20 @@ public class UserRepositoryAdapter implements UserRepository {
         return user;
     }
 
-    // Update toEntity method to include profile conversion
+    // Actualizado para incluir password
     private UserEntity toEntity(User model) {
         UserEntity entity = new UserEntity(
                 model.getId(),
                 model.getUsername(),
                 model.getEmail(),
+                model.getPassword(), // Incluir la contraseña encriptada
                 model.getFirstName(),
                 model.getLastName(),
                 model.getCreatedAt(),
                 model.getUpdatedAt()
         );
 
-        // Convert profile if it exists
+        // Convertir el perfil si existe
         if (model.getProfile() != null) {
             UserProfile profile = model.getProfile();
             UserProfileEntity profileEntity = new UserProfileEntity(
