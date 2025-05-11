@@ -1,9 +1,9 @@
-package com.group2.detecthief.application.service;
+package com.group2.authservice.application.service;
 
-import com.group2.detecthief.api.dto.AuthRequestDTO;
-import com.group2.detecthief.api.dto.AuthResponseDTO;
-import com.group2.detecthief.api.dto.AuthResponseUserDTO;
-import com.group2.detecthief.infrastructure.supabase.SupabaseAuthClient;
+import com.group2.authservice.api.dto.AuthRequestDTO;
+import com.group2.authservice.api.dto.AuthResponseDTO;
+import com.group2.authservice.api.dto.AuthResponseUserDTO;
+import com.group2.authservice.infrastructure.supabase.SupabaseAuthClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

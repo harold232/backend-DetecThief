@@ -1,9 +1,8 @@
-package com.group2.detecthief.infrastructure.supabase;
+package com.group2.authservice.infrastructure.supabase;
 
-import com.group2.detecthief.api.dto.AuthRequestDTO;
-import com.group2.detecthief.api.dto.AuthResponseDTO;
-import com.group2.detecthief.api.dto.AuthResponseUserDTO;
-
+import com.group2.authservice.api.dto.AuthRequestDTO;
+import com.group2.authservice.api.dto.AuthResponseDTO;
+import com.group2.authservice.api.dto.AuthResponseUserDTO;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;

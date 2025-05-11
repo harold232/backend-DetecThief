@@ -1,9 +1,9 @@
-package com.group2.detecthief.api.controller;
+package com.group2.authservice.api.controller;
 
-import com.group2.detecthief.api.dto.AuthRequestDTO;
-import com.group2.detecthief.api.dto.AuthResponseDTO;
-import com.group2.detecthief.api.dto.AuthResponseUserDTO;
-import com.group2.detecthief.application.service.AuthService;
+import com.group2.authservice.api.dto.AuthRequestDTO;
+import com.group2.authservice.api.dto.AuthResponseDTO;
+import com.group2.authservice.api.dto.AuthResponseUserDTO;
+import com.group2.authservice.application.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
