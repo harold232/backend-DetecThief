@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
 
     @Bean
-    public IncidentRepository userRepository(JpaIncidentRepository jpaIncidentRepository) {
+    public IncidentRepository incidentRepository(JpaIncidentRepository jpaIncidentRepository) {
         return new IncidentRepositoryAdapter(jpaIncidentRepository);
     }
 }

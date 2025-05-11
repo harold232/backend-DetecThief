@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 
 public record IncidentResponseDTO(
         Integer id,
-        Long cameraId,
-        Long tipoIncidentId,
+        Integer cameraId,
+        Integer tipoIncidentId,
         String estado,
         String descripcion,
         LocalDateTime fechaDetectado,

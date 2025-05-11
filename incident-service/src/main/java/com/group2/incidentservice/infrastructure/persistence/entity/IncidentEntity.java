@@ -1,7 +1,9 @@
 package com.group2.incidentservice.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
@@ -10,6 +12,8 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name = "incidentes")
+@NoArgsConstructor
+@AllArgsConstructor
 public class IncidentEntity {
 
     @Id
@@ -17,10 +21,10 @@ public class IncidentEntity {
     private Integer id;
 
     @Column(name = "camera_id", nullable = false)
-    private Long cameraId;
+    private Integer cameraId;
 
     @Column(name = "tipo_incidente_id", nullable = false)
-    private Long tipoIncidentId;
+    private Integer tipoIncidentId;
 
     @Column(name = "estado", nullable = false)
     private String estado;

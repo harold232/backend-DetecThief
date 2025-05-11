@@ -3,8 +3,8 @@ package com.group2.incidentservice.api.dto;
 import java.time.LocalDateTime;
 
 public record IncidentRequestDTO(
-        Long cameraId,
-        Long tipoIncidentId,
+        Integer cameraId,
+        Integer tipoIncidentId,
         String estado,
         String descripcion,
         LocalDateTime fechaDetectado,

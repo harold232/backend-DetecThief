@@ -7,9 +7,9 @@ import java.util.Optional;
 
 public interface IncidentRepository {
     Incident save(Incident incident);
-    Optional<Incident> findById(Long id);
+    Optional<Incident> findById(Integer id);
     List<Incident> findAll();
-    void deleteById(Long id);
-    List<Incident> findByCameraId(Long cameraId);
-    Boolean existsById(Long id);
+    void deleteById(Integer id);
+    List<Incident> findByCameraId(Integer cameraId);
+    Boolean existsById(Integer id);
 }
