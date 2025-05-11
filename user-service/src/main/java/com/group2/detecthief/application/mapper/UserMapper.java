@@ -17,8 +17,8 @@ public class UserMapper {
                 dto.email(),
                 dto.nombre(),
                 dto.apellido(),
-                "operador", // Rol por defecto
-                "activo", // Estado por defecto
+                "operador",
+                "activo",
                 LocalDateTime.now(),
                 LocalDateTime.now()
         );
