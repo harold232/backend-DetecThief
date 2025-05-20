@@ -9,7 +9,9 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class DetecthiefApplication {
 
 	public static void main(String[] args) {
-		Dotenv dotenv = Dotenv.configure().load();
+		Dotenv dotenv = Dotenv.configure()
+				.directory("../")
+				.load();
 		dotenv.entries().forEach(entry -> System.setProperty(entry.getKey(), entry.getValue()));
 
 		SpringApplication.run(DetecthiefApplication.class, args);
