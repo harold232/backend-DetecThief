@@ -15,6 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.group2.incidentservice.application.service.IncidentService;
 import com.group2.incidentservice.domain.model.Incident;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.MalformedURLException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 
 @RestController
 @RequestMapping("/api/incidents")
@@ -52,5 +62,37 @@ public class IncidentController {
         incidentService.deleteIncident(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping("/{id}/confirm")
+    public ResponseEntity<Void> confirmIncident(@PathVariable Integer id) {
+        incidentService.updateIncidentStatus(id, "Confirmado");
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/{id}/reject")
+    public ResponseEntity<Void> rejectIncident(@PathVariable Integer id) {
+        incidentService.updateIncidentStatus(id, "Rechazado");
+        return ResponseEntity.ok().build();
+    }
+
+
+    @GetMapping("/image/{filename:.+}")
+    public ResponseEntity<Resource> getImage(@PathVariable String filename) {
+        Path imagePath = Paths.get("ruta/a/tu/carpeta/imagenes", filename); // actualiza esta ruta
+
+        try {
+            Resource resource = new UrlResource(imagePath.toUri());
+            if (resource.exists() || resource.isReadable()) {
+                return ResponseEntity.ok()
+                        .contentType(MediaType.IMAGE_JPEG)
+                        .body(resource);
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+        } catch (MalformedURLException e) {
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+
 
 }

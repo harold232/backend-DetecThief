@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 import com.group2.incidentservice.application.mapper.IncidentMapper;
 import com.group2.incidentservice.domain.model.Incident;
 import com.group2.incidentservice.domain.repository.IncidentRepository;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.stereotype.Service;
 
 @Service
 public class IncidentService {
@@ -41,5 +45,14 @@ public class IncidentService {
     public void deleteIncident(Integer id) {
         incidentRepository.deleteById(id);
     }
+
+    public void updateIncidentStatus(Integer id, String nuevoEstado) {
+        incidentRepository.findById(id).ifPresent(incident -> {
+            incident.setEstado(nuevoEstado);
+            incident.setActualizadoEn(LocalDateTime.now());
+            incidentRepository.save(incident);
+        });
+    }
+
 
 }
