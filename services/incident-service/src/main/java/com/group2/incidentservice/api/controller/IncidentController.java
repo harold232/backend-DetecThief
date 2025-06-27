@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.group2.incidentservice.api.dto.IncidentWithTypeDTO;
 import com.group2.incidentservice.application.service.IncidentService;
 import com.group2.incidentservice.domain.model.Incident;
 import org.springframework.core.io.Resource;
@@ -25,11 +26,10 @@ import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-
 @RestController
 @RequestMapping("/api/incidents")
 public class IncidentController {
-    
+
     @Autowired
     private IncidentService incidentService;
 
@@ -45,9 +45,21 @@ public class IncidentController {
         return ResponseEntity.ok(incidents);
     }
 
+    @GetMapping("/with-type")
+    public ResponseEntity<List<IncidentWithTypeDTO>> getAllIncidentsWithType() {
+        List<IncidentWithTypeDTO> incidents = incidentService.getAllIncidentsWithType();
+        return ResponseEntity.ok(incidents);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Incident> getIncidentById(@PathVariable Integer id) {
         Incident incident = incidentService.getIncidentById(id);
+        return ResponseEntity.ok(incident);
+    }
+
+    @GetMapping("/{id}/with-type")
+    public ResponseEntity<IncidentWithTypeDTO> getIncidentWithTypeById(@PathVariable Integer id) {
+        IncidentWithTypeDTO incident = incidentService.getIncidentWithTypeById(id);
         return ResponseEntity.ok(incident);
     }
 
@@ -65,20 +77,25 @@ public class IncidentController {
 
     @PutMapping("/{id}/confirm")
     public ResponseEntity<Void> confirmIncident(@PathVariable Integer id) {
-        incidentService.updateIncidentStatus(id, "Confirmado");
+        incidentService.confirmIncident(id);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/{id}/reject")
     public ResponseEntity<Void> rejectIncident(@PathVariable Integer id) {
-        incidentService.updateIncidentStatus(id, "Rechazado");
+        incidentService.rejectIncident(id);
         return ResponseEntity.ok().build();
     }
 
+    @DeleteMapping("/historial/{id}")
+    public ResponseEntity<Void> deleteHistorialIncident(@PathVariable Integer id) {
+        incidentService.deleteHistorialIncident(id);
+        return ResponseEntity.noContent().build();
+    }
 
     @GetMapping("/image/{filename:.+}")
     public ResponseEntity<Resource> getImage(@PathVariable String filename) {
-        Path imagePath = Paths.get("ruta/a/tu/carpeta/imagenes", filename); // actualiza esta ruta
+        Path imagePath = Paths.get("ruta/a/tu/carpeta/imagenes", filename);
 
         try {
             Resource resource = new UrlResource(imagePath.toUri());
@@ -93,6 +110,4 @@ public class IncidentController {
             return ResponseEntity.internalServerError().build();
         }
     }
-
-
 }

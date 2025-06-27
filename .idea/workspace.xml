@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc2f9da9-b451-48ca-a2ad-000d9c803143" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/api/dto/IncidentWithTypeDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/domain/model/HistorialIncidente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/domain/model/TipoIncidente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/domain/repository/HistorialIncidenteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/domain/repository/TipoIncidenteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/adapter/HistorialIncidenteRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/adapter/TipoIncidenteRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/entity/HistorialIncidente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/entity/TipoIncidente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/repository/JpaHistorialIncidenteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/repository/JpaTipoIncidenteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/api/controller/IncidentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/api/controller/IncidentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/application/service/IncidentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/application/service/IncidentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/config/BeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/config/BeanConfiguration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,38 +64,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.DetecthiefApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.detecthief [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.detecthief [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.detecthief [validate].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.DetecthiefApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;marlon&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/marli/Desktop/corrobora/backend-DetecThief&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DetecthiefApplication.executor": "Run",
+    "Maven.detecthief [clean].executor": "Run",
+    "Maven.detecthief [install].executor": "Run",
+    "Maven.detecthief [validate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.DetecthiefApplication.executor": "Run",
+    "git-widget-placeholder": "marlon",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/marli/Desktop/Proyecto_DT/DT_backend/backend-DetecThief",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\marli\Desktop\corrobora\backend-DetecThief\services" />
