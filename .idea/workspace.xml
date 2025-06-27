@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc2f9da9-b451-48ca-a2ad-000d9c803143" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/api/dto/IncidentWithTypeDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/domain/model/HistorialIncidente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/domain/model/TipoIncidente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/domain/repository/HistorialIncidenteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/domain/repository/TipoIncidenteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/adapter/HistorialIncidenteRepositoryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/adapter/TipoIncidenteRepositoryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/entity/HistorialIncidente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/entity/TipoIncidente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/repository/JpaHistorialIncidenteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/persistence/repository/JpaTipoIncidenteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/api/controller/IncidentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/api/controller/IncidentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/application/service/IncidentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/application/service/IncidentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/config/BeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/incident-service/src/main/java/com/group2/incidentservice/infrastructure/config/BeanConfiguration.java" afterDir="false" />
-    </list>
+    <list default="true" id="dc2f9da9-b451-48ca-a2ad-000d9c803143" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +63,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.DetecthiefApplication.executor": "Run",
-    "git-widget-placeholder": "marlon",
+    "git-widget-placeholder": "harold",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/marli/Desktop/Proyecto_DT/DT_backend/backend-DetecThief",
