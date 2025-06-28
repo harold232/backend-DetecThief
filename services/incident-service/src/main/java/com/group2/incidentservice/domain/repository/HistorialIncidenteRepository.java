@@ -10,4 +10,5 @@ public interface HistorialIncidenteRepository {
     void deleteById(Integer id);
     List<HistorialIncidente> findAll();
     Optional<HistorialIncidente> findById(Integer id);
+    void updateEstadoSistema(Integer id, String estadoSistema);
 }

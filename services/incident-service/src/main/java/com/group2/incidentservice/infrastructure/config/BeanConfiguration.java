@@ -11,6 +11,7 @@ import com.group2.incidentservice.infrastructure.persistence.repository.JpaTipoI
 import com.group2.incidentservice.infrastructure.persistence.repository.JpaHistorialIncidenteRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class BeanConfiguration {
@@ -28,5 +29,10 @@ public class BeanConfiguration {
     @Bean
     public HistorialIncidenteRepository historialIncidenteRepository(JpaHistorialIncidenteRepository jpaHistorialIncidenteRepository) {
         return new HistorialIncidenteRepositoryAdapter(jpaHistorialIncidenteRepository);
+    }
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }

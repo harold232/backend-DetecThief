@@ -38,6 +38,13 @@ public class HistorialIncidenteRepositoryAdapter implements HistorialIncidenteRe
     public Optional<HistorialIncidente> findById(Integer id) {
         return jpaHistorialIncidenteRepository.findById(id).map(this::toModel);
     }
+    @Override
+    public void updateEstadoSistema(Integer id, String estadoSistema) {
+        jpaHistorialIncidenteRepository.findById(id).ifPresent(entity -> {
+            entity.setEstadoSistema(estadoSistema);
+            jpaHistorialIncidenteRepository.save(entity);
+        });
+    }
 
     private HistorialIncidente toModel(HistorialIncidenteEntity entity) {
         return new HistorialIncidente(

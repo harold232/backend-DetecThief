@@ -37,6 +37,10 @@ public class UserEntity {
     @Column(name = "estado_sistema", nullable = false)
     private String estadoSistema;
 
+    @Column(name = "estado_notificaciones", nullable = false)
+    private String estadoNotificaciones;
+
+
     @Column(name = "creado_en", nullable = false)
     private LocalDateTime creadoEn;
 
@@ -57,6 +61,9 @@ public class UserEntity {
         }
         if (estadoSistema == null) {
             estadoSistema = "activo";
+        }
+        if (estadoNotificaciones == null) {
+            estadoNotificaciones = "activo";
         }
     }
 

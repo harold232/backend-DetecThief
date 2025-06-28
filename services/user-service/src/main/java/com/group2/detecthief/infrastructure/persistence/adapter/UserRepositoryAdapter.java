@@ -73,6 +73,7 @@ public class UserRepositoryAdapter implements UserRepository {
         entity.setApellido(user.getApellido());
         entity.setRol(user.getRol());
         entity.setEstadoSistema(user.getEstadoSistema());
+        entity.setEstadoNotificaciones(user.getEstadoNotificaciones());
         entity.setCreadoEn(user.getCreadoEn());
         entity.setActualizadoEn(user.getActualizadoEn());
         return entity;
@@ -87,6 +88,7 @@ public class UserRepositoryAdapter implements UserRepository {
                 entity.getApellido(),
                 entity.getRol(),
                 entity.getEstadoSistema(),
+                entity.getEstadoNotificaciones(),
                 entity.getCreadoEn(),
                 entity.getActualizadoEn()
         );

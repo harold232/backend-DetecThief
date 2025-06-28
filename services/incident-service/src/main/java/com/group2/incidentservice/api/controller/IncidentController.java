@@ -2,7 +2,6 @@ package com.group2.incidentservice.api.controller;
 
 import java.util.List;
 
-import com.group2.incidentservice.domain.model.HistorialIncidente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.group2.incidentservice.api.dto.IncidentWithTypeDTO;
+import com.group2.incidentservice.api.dto.UpdateEstadoSistemaDTO;
 import com.group2.incidentservice.application.service.IncidentService;
 import com.group2.incidentservice.domain.model.Incident;
+import com.group2.incidentservice.domain.model.HistorialIncidente;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.MediaType;
@@ -104,6 +105,14 @@ public class IncidentController {
     public ResponseEntity<HistorialIncidente> getHistorialIncidenteById(@PathVariable Integer id) {
         HistorialIncidente historial = incidentService.getHistorialIncidenteById(id);
         return ResponseEntity.ok(historial);
+    }
+
+    @PutMapping("/historial/{id}/estado")
+    public ResponseEntity<Void> updateHistorialEstadoSistema(
+            @PathVariable Integer id,
+            @RequestBody UpdateEstadoSistemaDTO updateDTO) {
+        incidentService.updateHistorialEstadoSistema(id, updateDTO.estadoSistema());
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/image/{filename:.+}")

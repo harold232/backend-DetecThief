@@ -18,7 +18,8 @@ public class UserMapper {
                 dto.nombre(),
                 dto.apellido(),
                 "operador", // Rol por defecto
-                "activo", // Estado por defecto
+                "activo",
+                "inactivo",// Estado por defecto
                 LocalDateTime.now(),
                 LocalDateTime.now()
         );
@@ -33,6 +34,7 @@ public class UserMapper {
                 user.getApellido(),
                 user.getRol(),
                 user.getEstadoSistema(),
+                user.getEstadoNotificaciones(),
                 user.getCreadoEn(),
                 user.getActualizadoEn()
         );

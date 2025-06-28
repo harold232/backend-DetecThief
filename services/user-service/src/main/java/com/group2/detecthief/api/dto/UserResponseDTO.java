@@ -11,6 +11,7 @@ public record UserResponseDTO(
         String apellido,
         String rol,
         String estadoSistema,
+        String estadoNotificaciones,
         LocalDateTime creadoEn,
         LocalDateTime actualizadoEn
 ) {}

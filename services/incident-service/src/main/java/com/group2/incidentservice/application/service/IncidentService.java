@@ -3,11 +3,15 @@ package com.group2.incidentservice.application.service;
 import java.util.List;
 import java.util.Optional;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestClientException;
 
 import com.group2.incidentservice.api.dto.IncidentWithTypeDTO;
+import com.group2.incidentservice.api.dto.UserDTO;
 import com.group2.incidentservice.application.mapper.IncidentMapper;
 import com.group2.incidentservice.domain.model.Incident;
 import com.group2.incidentservice.domain.model.TipoIncidente;
@@ -23,15 +27,22 @@ public class IncidentService {
     private final TipoIncidenteRepository tipoIncidenteRepository;
     private final HistorialIncidenteRepository historialIncidenteRepository;
     private final IncidentMapper incidentMapper;
+    private final RestTemplate restTemplate;
+
+    // Retry configuration
+    private static final int MAX_RETRY_ATTEMPTS = 3;
+    private static final long RETRY_DELAY_MS = 1000; // 1 second
 
     public IncidentService(IncidentRepository incidentRepository,
                            TipoIncidenteRepository tipoIncidenteRepository,
                            HistorialIncidenteRepository historialIncidenteRepository,
-                           IncidentMapper incidentMapper) {
+                           IncidentMapper incidentMapper,
+                           RestTemplate restTemplate) {
         this.incidentRepository = incidentRepository;
         this.tipoIncidenteRepository = tipoIncidenteRepository;
         this.historialIncidenteRepository = historialIncidenteRepository;
         this.incidentMapper = incidentMapper;
+        this.restTemplate = restTemplate;
     }
 
     public Incident createIncident(Incident incident) {
@@ -80,17 +91,88 @@ public class IncidentService {
         Incident incident = incidentRepository.findById(id)
                 .orElseThrow(() -> new IncidentNotFoundException(id));
 
-        // Create history record - DON'T use the incident ID as FK reference
+        // Get active operators for notifications with retry logic
+        String contactosNotificados = getActiveOperatorIdsWithRetry();
+
+        // Create history record
         HistorialIncidente historial = new HistorialIncidente();
-        historial.setComentario("Incident ID: " + id + " - " + incident.getDescripcion()); // Include ID in comment
+        historial.setComentario(incident.getDescripcion());
         historial.setFechaCambio(LocalDateTime.now());
-        historial.setContactosNotificados("");
+        historial.setContactosNotificados(contactosNotificados);
         historial.setEstadoSistema("activo");
 
         historialIncidenteRepository.save(historial);
 
-        // Now delete from incidents table
+        // Delete from incidents table
         incidentRepository.deleteById(id);
+    }
+
+    public void updateHistorialEstadoSistema(Integer id, String estadoSistema) {
+        // Validate estado_sistema values
+        if (!isValidEstadoSistema(estadoSistema)) {
+            throw new IllegalArgumentException("Estado sistema inválido: " + estadoSistema);
+        }
+
+        historialIncidenteRepository.updateEstadoSistema(id, estadoSistema);
+    }
+
+    /**
+     * Get active operator IDs with retry logic
+     */
+    private String getActiveOperatorIdsWithRetry() {
+        for (int attempt = 1; attempt <= MAX_RETRY_ATTEMPTS; attempt++) {
+            try {
+                String result = getActiveOperatorIds();
+                System.out.println("Successfully retrieved operators on attempt " + attempt);
+                return result;
+
+            } catch (RestClientException e) {
+                System.err.println("Attempt " + attempt + " failed to fetch users: " + e.getMessage());
+
+                if (attempt == MAX_RETRY_ATTEMPTS) {
+                    System.err.println("All retry attempts failed. Returning empty contacts list.");
+                    return "";
+                }
+
+                // Wait before retrying
+                try {
+                    Thread.sleep(RETRY_DELAY_MS);
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                    System.err.println("Retry interrupted. Returning empty contacts list.");
+                    return "";
+                }
+            }
+        }
+        return "";
+    }
+
+    /**
+     * Original method to get active operator IDs
+     */
+    private String getActiveOperatorIds() {
+        String url = "http://localhost:8080/api/usuarios";
+        UserDTO[] users = restTemplate.getForObject(url, UserDTO[].class);
+
+        if (users == null) {
+            return "";
+        }
+
+        List<String> operatorIds = new ArrayList<>();
+        for (UserDTO user : users) {
+            if ("operador".equals(user.rol()) &&
+                    "activo".equals(user.estadoNotificaciones())) {
+                operatorIds.add(user.id().toString());
+            }
+        }
+
+        return String.join(",", operatorIds);
+    }
+
+    private boolean isValidEstadoSistema(String estadoSistema) {
+        return "activo".equals(estadoSistema) ||
+                "confirmado".equals(estadoSistema) ||
+                "descartado".equals(estadoSistema);
     }
 
     public void rejectIncident(Integer id) {

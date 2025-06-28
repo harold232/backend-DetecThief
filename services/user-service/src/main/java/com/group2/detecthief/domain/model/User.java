@@ -20,6 +20,7 @@ public class User {
     private String apellido;
     private String rol;
     private String estadoSistema;
+    private String estadoNotificaciones;
     private LocalDateTime creadoEn;
     private LocalDateTime actualizadoEn;
 
