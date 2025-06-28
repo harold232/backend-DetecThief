@@ -2,6 +2,7 @@ package com.group2.incidentservice.api.controller;
 
 import java.util.List;
 
+import com.group2.incidentservice.domain.model.HistorialIncidente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -91,6 +92,18 @@ public class IncidentController {
     public ResponseEntity<Void> deleteHistorialIncident(@PathVariable Integer id) {
         incidentService.deleteHistorialIncident(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/historial")
+    public ResponseEntity<List<HistorialIncidente>> getAllHistorialIncidentes() {
+        List<HistorialIncidente> historial = incidentService.getAllHistorialIncidentes();
+        return ResponseEntity.ok(historial);
+    }
+
+    @GetMapping("/historial/{id}")
+    public ResponseEntity<HistorialIncidente> getHistorialIncidenteById(@PathVariable Integer id) {
+        HistorialIncidente historial = incidentService.getHistorialIncidenteById(id);
+        return ResponseEntity.ok(historial);
     }
 
     @GetMapping("/image/{filename:.+}")

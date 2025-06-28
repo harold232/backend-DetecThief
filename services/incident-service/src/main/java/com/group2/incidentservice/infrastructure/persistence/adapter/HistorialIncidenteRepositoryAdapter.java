@@ -7,6 +7,9 @@ import com.group2.incidentservice.infrastructure.persistence.repository.JpaHisto
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.Optional;
+
 @Component
 @AllArgsConstructor
 public class HistorialIncidenteRepositoryAdapter implements HistorialIncidenteRepository {
@@ -24,10 +27,21 @@ public class HistorialIncidenteRepositoryAdapter implements HistorialIncidenteRe
         jpaHistorialIncidenteRepository.deleteById(id);
     }
 
+    @Override
+    public List<HistorialIncidente> findAll() {
+        return jpaHistorialIncidenteRepository.findAll().stream()
+                .map(this::toModel)
+                .toList();
+    }
+
+    @Override
+    public Optional<HistorialIncidente> findById(Integer id) {
+        return jpaHistorialIncidenteRepository.findById(id).map(this::toModel);
+    }
+
     private HistorialIncidente toModel(HistorialIncidenteEntity entity) {
         return new HistorialIncidente(
                 entity.getId(),
-                entity.getIncidenteId(),
                 entity.getComentario(),
                 entity.getFechaCambio(),
                 entity.getContactosNotificados(),
@@ -38,7 +52,6 @@ public class HistorialIncidenteRepositoryAdapter implements HistorialIncidenteRe
     private HistorialIncidenteEntity toEntity(HistorialIncidente historialIncidente) {
         return new HistorialIncidenteEntity(
                 historialIncidente.getId(),
-                historialIncidente.getIncidenteId(),
                 historialIncidente.getComentario(),
                 historialIncidente.getFechaCambio(),
                 historialIncidente.getContactosNotificados(),

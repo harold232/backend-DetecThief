@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class HistorialIncidente {
     private Integer id;
-    private Integer incidenteId;
     private String comentario;
     private LocalDateTime fechaCambio;
     private String contactosNotificados;

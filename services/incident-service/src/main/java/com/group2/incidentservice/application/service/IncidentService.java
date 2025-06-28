@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.time.LocalDateTime;
 
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.group2.incidentservice.api.dto.IncidentWithTypeDTO;
@@ -74,21 +75,21 @@ public class IncidentService {
         incidentRepository.deleteById(id);
     }
 
+    @Transactional
     public void confirmIncident(Integer id) {
         Incident incident = incidentRepository.findById(id)
                 .orElseThrow(() -> new IncidentNotFoundException(id));
 
-        // Create history record
+        // Create history record - DON'T use the incident ID as FK reference
         HistorialIncidente historial = new HistorialIncidente();
-        historial.setIncidenteId(id);
-        historial.setComentario(incident.getDescripcion());
+        historial.setComentario("Incident ID: " + id + " - " + incident.getDescripcion()); // Include ID in comment
         historial.setFechaCambio(LocalDateTime.now());
-        historial.setContactosNotificados(""); // Will be defined later
+        historial.setContactosNotificados("");
         historial.setEstadoSistema("activo");
 
         historialIncidenteRepository.save(historial);
 
-        // Delete from incidents table
+        // Now delete from incidents table
         incidentRepository.deleteById(id);
     }
 
@@ -101,6 +102,15 @@ public class IncidentService {
 
     public void deleteHistorialIncident(Integer id) {
         historialIncidenteRepository.deleteById(id);
+    }
+
+    public List<HistorialIncidente> getAllHistorialIncidentes() {
+        return historialIncidenteRepository.findAll();
+    }
+
+    public HistorialIncidente getHistorialIncidenteById(Integer id) {
+        return historialIncidenteRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Historial incidente not found with id: " + id));
     }
 
     public void updateIncidentStatus(Integer id, String nuevoEstado) {

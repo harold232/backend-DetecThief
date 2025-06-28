@@ -19,9 +19,6 @@ public class HistorialIncidenteEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "incidente_id", nullable = false)
-    private Integer incidenteId;
-
     @Column(name = "comentario")
     private String comentario;
 

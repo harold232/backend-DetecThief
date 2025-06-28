@@ -6,3 +6,4 @@ import java.util.Optional;
 public interface TipoIncidenteRepository {
     Optional<TipoIncidente> findById(Integer id);
 }
+
