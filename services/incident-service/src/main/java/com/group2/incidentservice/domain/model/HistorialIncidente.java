@@ -17,4 +17,7 @@ public class HistorialIncidente {
     private LocalDateTime fechaCambio;
     private String contactosNotificados;
     private String estadoSistema;
+    private String evidencia_referencial;
+    private Integer tipoIncidentId;
+
 }

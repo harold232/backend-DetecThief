@@ -52,7 +52,10 @@ public class HistorialIncidenteRepositoryAdapter implements HistorialIncidenteRe
                 entity.getComentario(),
                 entity.getFechaCambio(),
                 entity.getContactosNotificados(),
-                entity.getEstadoSistema()
+                entity.getEstadoSistema(),
+                entity.getEvidencia_referencial(),
+                entity.getIncidente_tipo()
+
         );
     }
 
@@ -62,7 +65,9 @@ public class HistorialIncidenteRepositoryAdapter implements HistorialIncidenteRe
                 historialIncidente.getComentario(),
                 historialIncidente.getFechaCambio(),
                 historialIncidente.getContactosNotificados(),
-                historialIncidente.getEstadoSistema()
+                historialIncidente.getEstadoSistema(),
+                historialIncidente.getEvidencia_referencial(),
+                historialIncidente.getTipoIncidentId()
         );
     }
 }

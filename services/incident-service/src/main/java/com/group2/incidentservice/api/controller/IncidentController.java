@@ -2,6 +2,7 @@ package com.group2.incidentservice.api.controller;
 
 import java.util.List;
 
+import com.group2.incidentservice.api.dto.HistorialIncidenteWithTypeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -114,7 +115,17 @@ public class IncidentController {
         incidentService.updateHistorialEstadoSistema(id, updateDTO.estadoSistema());
         return ResponseEntity.ok().build();
     }
+    @GetMapping("/historial/with-type")
+    public ResponseEntity<List<HistorialIncidenteWithTypeDTO>> getAllHistorialIncidentesWithType() {
+        List<HistorialIncidenteWithTypeDTO> historial = incidentService.getAllHistorialIncidentesWithType();
+        return ResponseEntity.ok(historial);
+    }
 
+    @GetMapping("/historial/{id}/with-type")
+    public ResponseEntity<HistorialIncidenteWithTypeDTO> getHistorialIncidenteWithTypeById(@PathVariable Integer id) {
+        HistorialIncidenteWithTypeDTO historial = incidentService.getHistorialIncidenteWithTypeById(id);
+        return ResponseEntity.ok(historial);
+    }
     @GetMapping("/image/{filename:.+}")
     public ResponseEntity<Resource> getImage(@PathVariable String filename) {
         Path imagePath = Paths.get("ruta/a/tu/carpeta/imagenes", filename);
