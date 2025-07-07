@@ -7,10 +7,10 @@ Bienvenido al repositorio del backend de **DetecThief** 🚨, el sistema intelig
 ## 📚 Índice
 
 1. [Descripción General](#-descripcion-general)
-2. [Arquitectura](#arquitectura)
-3. [Servicios Principales](#servicios-principales)
-4. [Instalación y Ejecución](#instalacion-y-ejecucion) 
-5. [Contribuciones](#contribuciones) 
+2. [Arquitectura](#-arquitectura)
+3. [Servicios Principales](#-servicios-principales)
+4. [Instalación y Ejecución](#-instalacion-y-ejecucion) 
+5. [Contribuciones](#-contribuciones) 
 
 ---
 
