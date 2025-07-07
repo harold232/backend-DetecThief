@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import com.group2.incidentservice.api.dto.HistorialIncidenteWithTypeDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
@@ -100,13 +101,44 @@ public class IncidentService {
         historial.setFechaCambio(LocalDateTime.now());
         historial.setContactosNotificados(contactosNotificados);
         historial.setEstadoSistema("activo");
+        historial.setEvidencia_referencial(incident.getImagenReferencia());
+        historial.setTipoIncidentId(incident.getTipoIncidentId());
+
 
         historialIncidenteRepository.save(historial);
 
         // Delete from incidents table
         incidentRepository.deleteById(id);
     }
+    public List<HistorialIncidenteWithTypeDTO> getAllHistorialIncidentesWithType() {
+        List<HistorialIncidente> historialList = historialIncidenteRepository.findAll();
+        return historialList.stream()
+                .map(this::mapToHistorialIncidenteWithTypeDTO)
+                .toList();
+    }
 
+    public HistorialIncidenteWithTypeDTO getHistorialIncidenteWithTypeById(Integer id) {
+        HistorialIncidente historial = historialIncidenteRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Historial incidente not found with id: " + id));
+        return mapToHistorialIncidenteWithTypeDTO(historial);
+    }
+
+    private HistorialIncidenteWithTypeDTO mapToHistorialIncidenteWithTypeDTO(HistorialIncidente historial) {
+        Optional<TipoIncidente> tipoIncidente = tipoIncidenteRepository.findById(historial.getTipoIncidentId());
+
+        return new HistorialIncidenteWithTypeDTO(
+                historial.getId(),
+                historial.getComentario(),
+                historial.getFechaCambio(),
+                historial.getContactosNotificados(),
+                historial.getEstadoSistema(),
+                historial.getEvidencia_referencial(),
+                historial.getTipoIncidentId(),
+                tipoIncidente.map(TipoIncidente::getNombre).orElse("Unknown"),
+                tipoIncidente.map(TipoIncidente::getDescripcion).orElse("Unknown"),
+                tipoIncidente.map(TipoIncidente::getGravedad).orElse(0)
+        );
+    }
     public void updateHistorialEstadoSistema(Integer id, String estadoSistema) {
         // Validate estado_sistema values
         if (!isValidEstadoSistema(estadoSistema)) {

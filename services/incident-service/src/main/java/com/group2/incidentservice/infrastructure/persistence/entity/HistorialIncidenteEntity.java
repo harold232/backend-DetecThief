@@ -31,6 +31,12 @@ public class HistorialIncidenteEntity {
     @Column(name = "estado_sistema", nullable = false)
     private String estadoSistema;
 
+    @Column(name = "evidencia_referencial")
+    private String evidencia_referencial;
+
+    @Column(name = "tipo_incidente_id")
+    private Integer incidente_tipo;
+
     @PrePersist
     protected void onCreate() {
         this.fechaCambio = LocalDateTime.now();
