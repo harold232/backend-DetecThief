@@ -6,15 +6,15 @@ Bienvenido al repositorio del backend de **DetecThief** 🚨, el sistema intelig
 
 ## 📚 Índice
 
-1. [Descripción General](#descripción-general)
+1. [Descripción General](#-descripcion-general)
 2. [Arquitectura](#arquitectura)
 3. [Servicios Principales](#servicios-principales)
-4. [Instalación y Ejecución](#instalación-y-ejecución) 
+4. [Instalación y Ejecución](#instalacion-y-ejecucion) 
 5. [Contribuciones](#contribuciones) 
 
 ---
 
-## 📝 Descripción General
+## 📝 Descripcion General
 
 DetecThief es un backend modular construido en Java, orientado a microservicios. Permite la integración con sistemas de cámaras y notificación para detectar y reportar robos en espacios físicos, facilitando la gestión centralizada de alertas y usuarios.
 
@@ -43,7 +43,7 @@ Cada microservicio puede desplegarse y escalarse de manera independiente.
 
 ---
 
-## 🚀 Instalación y Ejecución
+## 🚀 Instalacion y Ejecucion
 
 1. Clona el repositorio:
    ```bash
