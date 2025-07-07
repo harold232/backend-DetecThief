@@ -44,11 +44,11 @@ public class CameraService {
     }
 
     public Camera activateCamera(Integer id) {
-        return updateCameraStatus(id, "Activo");
+        return updateCameraStatus(id, "activo");
     }
 
     public Camera deactivateCamera(Integer id) {
-        return updateCameraStatus(id, "Inactivo");
+        return updateCameraStatus(id, "inactivo");
     }
 
     public Camera updateCameraStatus(Integer id, String nuevoEstado) {
